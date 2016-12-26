@@ -1,0 +1,10 @@
+script type="text/javascript" src="./js/jquery-1.8.3.min.js"
+script type="text/javascript" src="./js/jquery.ui.core.min.js"
+script type="text/javascript" src="./js/jquery.ui.widget.min.js"
+script type="text/javascript" src="./js/jquery.ui.rcarousel.min.js"
+script type="text/javascript" src="./js/Menu.js"
+script type="text/javascript" src="./js/common.js"
+
+form#aspnetForm name="aspnetForm" method="post" action="/fr/boutique/rayon_evenement.aspx?evenement_id=791"
+  == Slim::Template.new('src/slim/partial/_form.slim').render
+  == Slim::Template.new('src/slim/partial/_shadContentAndFoo.slim').render

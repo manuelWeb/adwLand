@@ -1,0 +1,25 @@
+| #{"\n"}
+/! ####################################### UPP_DIALOGUE #######################################
+#ctl00_UPP_DIALOGUE
+  #layerAjout style="display:none"
+    .layerAjout
+      .title
+        span#ctl00_UC_DIALOG_LAB_ARTICLESPRISENCOMPTE
+          | Ce produit a bien été ajouté à votre panier
+      img#IMG_DIALOGUE_PRD src="/Visuels/Produits/grand/" alt="" width="140" height="140" border="0" style="border: 1px solid #646464;"
+      .info
+        b
+          span#ctl00_UC_DIALOG_LAB_LIBELLEPRD_DIV
+        br
+        span#ctl00_UC_DIALOG_LAB_MOTQTEPRODUIT
+          | Quantité : 
+        span#ctl00_UC_DIALOG_LAB_QTEPRODUIT
+        .price
+          span#ctl00_UC_DIALOG_LAB_PRIX_PRODUIT_DIV
+            | 0 €
+        a#ctl00_UC_DIALOG_A_POURSUIVRE_ACHATS.next href="../../inc/#"
+          span#ctl00_UC_DIALOG_LAB_POURSUIVRE_ACHATS
+            | Poursuivre mes achats
+        a#ctl00_UC_DIALOG_A_VOIR_PANIER.view href=="javascript:__doPostBack('ctl00$UC_DIALOG$A_VOIR_PANIER','')"
+          span#ctl00_UC_DIALOG_LAB_VOIR_PANIER
+            | Voir mon panier

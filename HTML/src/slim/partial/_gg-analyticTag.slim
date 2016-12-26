@@ -1,0 +1,9 @@
+| #{"\n"}
+/! ####################################### gg-analyticTag #######################################
+| #{"\n"}
+/! Balise Google Analytics
+script type="text/javascript"
+  |
+    var IDBoutonRecherche = "ctl00_UC_HEADER_UC_RECHERCHE_BTN_RECHERCHE";
+    var IDBoutonNewsletter = "ctl00_UC_BAS_UC_NEWSLETTER_BTN_NEWSLETTER";
+    Sys.Application.add_init(function() { $create(Sys.UI._UpdateProgress, { "associatedUpdatePanelId": null, "displayAfter": 500, "dynamicLayout": true }, null, null, $get("ctl00_UC_HEADER_UC_RECHERCHE_UC_ATTENTE_PRG_UPP_PROGRESS")); }); Sys.Application.add_init(function() { $create(Sys.UI._UpdateProgress, { "associatedUpdatePanelId": null, "displayAfter": 500, "dynamicLayout": true }, null, null, $get("ctl00_UC_ATTENTE_PRG_UPP_PROGRESS")); });

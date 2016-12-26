@@ -1,0 +1,17 @@
+| #{"\n"}
+/! ####################################### UPP_ACCESADULTE #######################################
+#ctl00_UPP_ACCESADULTE
+  #layerAccesAdulte style="display:none"
+    .layerAjout
+      .title
+        span#ctl00_UC_ACCESADULTE_LAB_TITREACCESADULTE
+          | AVERTISSEMENT
+      div
+        span#ctl00_UC_ACCESADULTE_LAB_TEXTEACCESADULTE
+          | Vous devez être majeur pour accéder à cette section. Respectez-vous cette condition ? 
+        br
+        br
+        a#ctl00_UC_ACCESADULTE_PB_POURSUIVRE_VISITE.back href=="javascript:__doPostBack('ctl00$UC_ACCESADULTE$PB_POURSUIVRE_VISITE','')"
+          | Oui, je suis majeur
+        a#ctl00_UC_ACCESADULTE_PB_ARRETER_VISITE.back href=="javascript:__doPostBack('ctl00$UC_ACCESADULTE$PB_ARRETER_VISITE','')"
+          | Non, je suis mineur

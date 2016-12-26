@@ -44,18 +44,23 @@ gulp.task('browserSync',function () {
 
 // img task
 gulp.task('images', function() {
-  'use strict';
   return gulp.src([src+'images/**/*.{png,jpg,gif,svg}'])
-  .pipe(changed(img))
   .pipe(gulp.dest(img))
 });
-
+gulp.task('visuels', function() {
+  return gulp.src([src+'Visuels/**/**/*.{png,jpg,gif,svg}'])
+  .pipe(gulp.dest('dest/Visuels'))
+});
+// fonts
+gulp.task('fonts', function() {
+  return gulp.src([src+'fonts/*.{eot,svg,ttf,woff}'])
+  .pipe(gulp.dest('dest/fonts'))
+});
 // script-cp task
 gulp.task('script', function() {
   'use strict';
   return gulp.src([src+'js/*.js'])
   // .pipe(npm()) // js traitement
-  .pipe(changed(script))
   .pipe(gulp.dest(script))
   .pipe(browserSync.reload({stream: true }));
 });
@@ -101,8 +106,9 @@ function premailergo (slimEnd) {
   console.log('slimeEnd: '+slimEnd);
 };
 
-gulp.task('dev',['browserSync','images','script','slim','sass'], function() {
+gulp.task('dev',['browserSync','visuels','images','script','fonts','slim','sass'], function() {
   gulp.watch([src+'images/**/*.{png,jpg,gif,svg}'],['images'])
+  gulp.watch([src+'Visuels/**/**/*.{png,jpg,gif,svg}'],['visuels'])
   gulp.watch([src+'js/*.js'],['script'])
   gulp.watch(src+'scss/*.scss',['slim','sass','images','script']);
   gulp.watch(src+'slim/*.slim',['slim','images','script']);

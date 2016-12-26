@@ -17,4 +17,6 @@
 ├───medias  
 └───ZL  
 ```
-- 
+- convert CSS to SCSS
+- Usage: sass-convert [options] [INPUT] [OUTPUT]
+-

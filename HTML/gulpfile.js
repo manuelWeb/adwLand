@@ -88,7 +88,7 @@ gulp.task('slim', function () {
   var slimEnd = false;
   return gulp.src([src+'slim/*.slim']) // src+'*.slim', // pas de fichier sur :root
   .pipe(plumber())
-  .pipe(slim( {pretty: true, indent: '4' })) // {read:false},
+  .pipe(slim( {pretty: true, indent: '2' })) // {read:false},
   // .pipe(changed('HTML/dest/'))
   .pipe(using())
   .pipe(gulp.dest('dest/')) // slim folder
@@ -122,7 +122,7 @@ gulp.task('dev',['browserSync','visuels','images','script','fonts','slim','sass'
 // replace ../images/src/ (css) & images/src/blabla (html)
 gulp.task('replaceSrc', function(){
   // cp dest/imgs/* in build/
-  gulp.src(['dest/images/imgZL/*.{png,jpg,gif,svg}','dest/js/setCookie_codeKdo.js','dest/js/getUtm.js'])
+  gulp.src(['dest/images/imgZL/*.{png,jpg,gif,svg}','dest/js/injectHtml.js'])
     .pipe(gulp.dest('build/'))
     .pipe(using())
     .on('end', function() {
@@ -138,7 +138,7 @@ gulp.task('replaceSrc', function(){
     .pipe(gulp.dest('build/'))
     .pipe(using());
   // cp dest/styleZL.html in build/ + regex to replace src path
-  gulp.src(['dest/css/styleZoneLibre.css'])
+  gulp.src(['dest/css/modifTempl.css'])
     // change src
     .pipe(replace('../images/imgZL/', ''))
     // del css map
@@ -158,30 +158,6 @@ function replaceEnd (replaceBool) {
   console.log('replaceBool: '+replaceBool);
 };
 
-// with cheerio & request on www
-// @see https://www.digitalocean.com/community/tutorials/how-to-use-node-js-request-and-cheerio-to-set-up-simple-web-scraping
-gulp.task('htmlOnWeb', function() {
-  // var request = require('request');
-  // var cheerio = require('cheerio');
-  request('https://www.tempsl.fr', function (error, response, html) {
-    if (!error && response.statusCode == 200) {
-      // all html code
-      // regex remplacement des src rel par abs
-      html = html.replace(/(src=\"|link=\"|href=\"|src=')(\/)([^\.])/g,"$1http://www.tempsl.fr/$3");
-      // regex remplacement iso by UTF-8
-      html = html.replace(/<meta content=\"text\/html; charset=ISO-8859-1\" \/>/,"<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\" />");
-      // regex replace 
-      // html = html.replace(/src='/,"");
-      console.log(html);
-      fs.writeFile("dest/index_cheerio.html", html, function(err) {
-        if (err) {
-          return console.log(err);
-        }
-        console.log("The file was saved!");
-      });
-    }
-  });
-});
 // static
 // @see http://maxogden.com/scraping-with-node.html
 gulp.task('html', function() {

@@ -1,0 +1,30 @@
+.crackBo,
+.zone1 {
+  clear: left;
+}
+.crackBo, #listingProduct {
+  overflow: hidden;
+  background-color: #fff;
+}
+.crackBo, #listingProduct ul {
+  overflow: visible;
+  width: 790px;
+}
+.crackBo,.colRight {
+  float: right;
+  width: 260px;
+  min-height: 600px;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-left: 1px solid #AF007D;
+  background-color: #eee;
+}
+
+// module conseillère
+.crackBo, .modConseill span {
+  display: block;
+  font: italic 16px "Times New Roman", Times, serif;
+  color: #6B4795;
+  text-indent: 22px;
+  background: url(../images/Version4/bg_puce-garantie.png) 0 50% no-repeat;
+}

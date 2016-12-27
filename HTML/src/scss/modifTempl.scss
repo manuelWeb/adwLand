@@ -13,7 +13,7 @@
 .crackBo,.colRight {
   float: right;
   width: 260px;
-  min-height: 600px;
+  min-height: 100px;
   padding-left: 10px;
   padding-top: 10px;
   border-left: 1px solid #AF007D;
@@ -21,11 +21,41 @@
 }
 
 // module conseillère
-.crackBo, .modConseill span {
+.modConseill {
+  // zl_conseilliere.jpg
+  // background: url(../images/imgZL/zl_conseilliere.jpg) 0 0 no-repeat;
+}
+.crackBo, .modConseill span.tilCons {
   display: block;
   font: italic 16px "Times New Roman", Times, serif;
   color: #6B4795;
   text-indent: 22px;
   background: url(../images/imgZL/bg_puce-garantie.png) 0 50% no-repeat;
-  // images/imgZL
+}
+.crackBo, .zl_numSva {
+  position: relative; width: 194px;
+  display: inline-block; height: 24px; vertical-align: middle;
+  padding: 2px 8px;
+  line-height: 24px; font-size: 12px; font-weight: bold;
+  color: #AF007D; background-color: #FFF;
+  box-shadow: inset 0px 0px 4px rgba(0,0,0,0.5);
+}
+.crackBo, .zl_numSva > span {
+  position: absolute; top: -2px; right: 12px; bottom: -2px;
+  display: inline-block;
+  line-height: 11px;
+  padding: 0 10px; padding-top: 4px;
+  font-size: 9px;
+  color: #fff;
+  background-color: #AF007D;
+}
+.crackBo, .zl_numSva > span:before {
+  // position: absolute; left: -8px; top: 33%; display: block;
+  // font-size: 24px;
+  // content: '▸';
+  display: block; position: absolute; left: 0; top: 33%;
+  content: ' ';
+  background-image: url('../images/imgZL/arrowNumSva.svg');
+  height: 11px;
+  width: 6px;
 }

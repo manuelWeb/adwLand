@@ -1,11 +1,13 @@
 $(document).ready(function (argument) {
 var modConseill_ = true;
-var modGaranti_  = true;
+var modGaranti_  = false;
   // creation marquage HTML et texte
   var modConseill = '\
-      <span>Une conseillère à votre écoute</span>\
+      <span class="tilCons">Une conseillère à votre écoute</span>\
+      <p> > Vous pouvez nous contacter<br>par téléphone</p>\
+      <span class="zl_numSva">0 892 780 790 <span>Service 0.45€ / min<br /> + prix appel</span> </span>\
   ',  modGaranti = '\
-      <span>Nos garanties bla...bla...</span>\
+      <span>Nos garanties</span>\
   ';
   // best solution to inject HTML by JS script (after dom ready)
   // fct to create modules

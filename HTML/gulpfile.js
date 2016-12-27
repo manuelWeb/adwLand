@@ -35,7 +35,7 @@ var src = 'src/',
 gulp.task('browserSync',function () {
   'use strict';
   browserSync({
-    browser: 'chrome',
+    // browser: 'chrome',
     server: {
       baseDir: 'dest/'
     }
@@ -122,7 +122,7 @@ gulp.task('dev',['browserSync','visuels','images','script','fonts','slim','sass'
 // replace ../images/src/ (css) & images/src/blabla (html)
 gulp.task('replaceSrc', function(){
   // cp dest/imgs/* in build/
-  gulp.src(['dest/images/imgZL/*.{png,jpg,gif,svg}','dest/js/injectHtml.js'])
+  gulp.src(['dest/images/imgZL/*.{png,jpg,gif,svg}','dest/js/injectHtml.js','dest/js/inject_Html.js'])
     .pipe(gulp.dest('build/'))
     .pipe(using())
     .on('end', function() {
@@ -168,12 +168,12 @@ gulp.task('html', function() {
   var parsedHTML = $.load(htmlString)
 
   // query for all elements with class 'foo' and loop over them
-  parsedHTML('.zoneLibre').map(function(i, zoneL) {
+  parsedHTML('#ctl00_ContentPlaceHolder1_shpEncartRayonEvent').map(function(i, zoneL) {
     // the zoneL html element into a cheerio object (same pattern as jQuery)
     zoneL = $(zoneL);
     zoneL = zoneL.html()
-    .replace('./js/getUtm.js', 'getUtm.js')
-    .replace('./js/setCookie_codeKdo.js', 'setCookie_codeKdo.js')
+    .replace('./js/injectHtml.js', 'injectHtml.js')
+    .replace('./js/inject_Html.js', 'inject_Html.js')
     .replace(/(<img("[^"]*"|[^\/">])*)>/g, "$1 />")
     .replace(/(<br[^\/])/, "<br />")
     .replace(/<br>/g, "<br />")

@@ -1,16 +1,18 @@
-.crackBo,
-.zone1 {
+.avoidIdBo, .zone1 {
   clear: left;
 }
-.crackBo, #listingProduct {
+.avoidIdBo, #listingProduct {
   overflow: hidden;
   background-color: #fff;
 }
-.crackBo, #listingProduct ul {
+.avoidIdBo, #listingProduct ul {
   overflow: visible;
   width: 790px;
 }
-.crackBo,.colRight {
+.avoidIdBo, .colRight, .colRight * {
+  box-sizing: border-box;
+}
+.avoidIdBo, .colRight {
   float: right;
   width: 260px;
   min-height: 100px;
@@ -21,41 +23,55 @@
 }
 
 // module conseillère
-.modConseill {
+.avoidIdBo, .modConseill {
+  border: solid 2px pink; margin-bottom: 10px;
   // zl_conseilliere.jpg
   // background: url(../images/imgZL/zl_conseilliere.jpg) 0 0 no-repeat;
 }
-.crackBo, .modConseill span.tilCons {
+.avoidIdBo, .tilCons {
   display: block;
   font: italic 16px "Times New Roman", Times, serif;
   color: #6B4795;
   text-indent: 22px;
   background: url(../images/imgZL/bg_puce-garantie.png) 0 50% no-repeat;
 }
-.crackBo, .zl_numSva {
-  position: relative; width: 194px;
-  display: inline-block; height: 24px; vertical-align: middle;
-  padding: 2px 8px;
-  line-height: 24px; font-size: 12px; font-weight: bold;
+.avoidIdBo, .zl_numSva {
+  position: relative; width: 200px; margin: 6px 0;
+  display: inline-block; vertical-align: middle;
+  padding: 2px 6px;
+  line-height: 20px; font-size: 12px; font-weight: bold;
   color: #AF007D; background-color: #FFF;
   box-shadow: inset 0px 0px 4px rgba(0,0,0,0.5);
+  border-radius: 1px;
 }
-.crackBo, .zl_numSva > span {
-  position: absolute; top: -2px; right: 12px; bottom: -2px;
+.avoidIdBo, .zl_numSva > span {
+  position: absolute; top: -2px; right: 8px; bottom: -2px;
   display: inline-block;
   line-height: 11px;
-  padding: 0 10px; padding-top: 4px;
+  padding: 0 10px; padding-top: 3px;
   font-size: 9px;
   color: #fff;
   background-color: #AF007D;
 }
-.crackBo, .zl_numSva > span:before {
-  // position: absolute; left: -8px; top: 33%; display: block;
-  // font-size: 24px;
-  // content: '▸';
-  display: block; position: absolute; left: 0; top: 33%;
+.avoidIdBo, .zl_numSva > span:before {
+  display: block; position: absolute; left: 0; top: 7px;
   content: ' ';
   background-image: url('../images/imgZL/arrowNumSva.svg');
-  height: 11px;
-  width: 6px;
+  width: 7px;
+  height: 15px;
+}
+
+// Module garanties
+.avoidIdBo, .modGaranti {@extend .modConseill}
+.avoidIdBo, .tilGarant {
+  @extend .tilCons;
+  margin-bottom: 4px;
+}
+.avoidIdBo, .eltRassur {
+  display: inline-block;
+  width: 49%; margin-bottom: 3px; padding-top: 5px;
+  background-color: #6B4795;
+  color: #fff; text-align: center;
+  font: 14px/20px theonlyexceptionregular;
+  // outline: 1px solid blue;
 }

@@ -122,7 +122,9 @@ gulp.task('dev',['browserSync','visuels','images','script','fonts','slim','sass'
 // replace ../images/src/ (css) & images/src/blabla (html)
 gulp.task('replaceSrc', function(){
   // cp dest/imgs/* in build/
-  gulp.src(['dest/images/imgZL/*.{png,jpg,gif,svg}','dest/js/injectHtml.js','dest/js/inject_Html.js'])
+  // gulp.src(['dest/images/imgZL/*.{png,jpg,gif,svg}','dest/js/injectHtml.js','dest/js/inject_Html.js'])
+  gulp.src(['dest/images/imgZL/*.{png,jpg,gif,svg}','dest/js/injectHtml.js'])
+    // .pipe(replace('./images/imgZL/', ''))
     .pipe(gulp.dest('build/'))
     .pipe(using())
     .on('end', function() {
@@ -132,6 +134,11 @@ gulp.task('replaceSrc', function(){
       console.log('archive OK')
     });
 
+  // cp inject_html replcae img src by BO path
+  gulp.src(['dest/js/inject_Html.js'])
+    .pipe(replace('./images/imgZL/', 'http://www.latelierdelucie.fr/Upload/ZonesLibres/da5e4f51-dda0-421b-84a2-951865963d7a/FR/'))
+    .pipe(gulp.dest('build/'))
+    .pipe(using());
   // cp dest/index.html in build/ + regex to replace src path
   gulp.src(['dest/index.html'])
     .pipe(replace('images/imgZL/', ''))

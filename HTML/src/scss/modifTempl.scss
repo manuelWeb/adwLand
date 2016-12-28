@@ -14,10 +14,10 @@
 }
 .avoidIdBo, .colRight {
   float: right;
-  width: 270px;
+  width: 260px;
   min-height: 100px;
   padding-top: 10px;
-  padding-right: 10px;
+  // padding-right: 10px;
   padding-left: 10px;
   border-left: 1px solid #AF007D;
   // background-color: #eee;
@@ -35,16 +35,12 @@
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #B70D7F;
-  // background: url(../images/imgZL/zl_conseilliere.jpg) 0 0 no-repeat;
 }
-// .avoidIdBo, .modConseill:after {
-//   // content: '';
-//   // border: 1px solid #B70D7F;
-//   content: '____________________________________';
-//   display: block;
-//   text-align: center;
-//   color: #B70D7F;
-// }
+.avoidIdBo, .contConseil {
+  padding-left: 48px;
+  padding-bottom: 28px;
+  background: url(../images/imgZL/zl_conseilliere.png) 0 0 no-repeat;
+}
 .avoidIdBo, .tilCons {
   display: block;
   font: italic 18px/18px "Times New Roman", Times, serif;
@@ -129,10 +125,12 @@
 }
 .avoidIdBo, .codKdo + a {
   display: inline-block;
-  height: 32px; padding: 0 20px;
+  height: 38px; padding: 0 20px;
   vertical-align: middle;
   border: none;
-  font: bold 14px arial; color: #fff; text-align: center;
-  background-color: #B70D7F;
-  border-radius: 15px;
+  font: bold 14px arial; color: #111; text-align: center;
+  background-color: #FBB500;
+  border: 2px solid #fff;
+  box-shadow: 0 0 14px rgba(0,0,0,0.35);
+  border-radius: 38px;
 }

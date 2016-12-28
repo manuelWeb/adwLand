@@ -1,0 +1,10 @@
+puce
+http://www.latelierdelucie.fr/Upload/ZonesLibres/da5e4f51-dda0-421b-84a2-951865963d7a/FR/bg_puce-garantie.png
+bg
+http://www.latelierdelucie.fr/Upload/ZonesLibres/da5e4f51-dda0-421b-84a2-951865963d7a/FR/zl_conseilliere.png
+imgHp
+http://www.latelierdelucie.fr/Upload/ZonesLibres/fdfc090a-e7ee-4537-bc36-66d4828a4cb4/FR/bg.jpg
+imgCatHp
+http://www.latelierdelucie.fr/Upload/ZonesLibres/fdfc090a-e7ee-4537-bc36-66d4828a4cb4/FR/cat.png
+imgZlFirstPP
+http://luciepreprod.as44099.com/Upload/ZonesLibres/c3e27057-2179-4f04-b7d2-f4ca0f1b3141/FR/bg.jpg

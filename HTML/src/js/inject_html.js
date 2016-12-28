@@ -1,6 +1,7 @@
 $(document).ready(function (argument) {
 var modConseill_ = true;
 var modGaranti_  = true;
+var modKdo_  = true;
   // creation marquage HTML et texte
   var modConseill = '\
       <span class="tilCons">Une conseillère à votre écoute</span>\
@@ -13,6 +14,12 @@ var modGaranti_  = true;
       <span class="eltRassur">Livraison<br />à la carte</span>\
       <span class="eltRassur">Paiement<br />sécurisé</span>\
       <span class="eltRassur">Garantie<br />un an</span>\
+  ',  modKdo = '\
+      <span class="tilKdo">Votre cadeau gratuit</span>\
+      <img src="./images/imgZL/kdo_2372993_WEB1.jpg" alt="" />\
+      <p class="libKdo"><b>La montre Geneva®* Noire ou Blanche</b> GRATUITE et sans obligation d\'achat.</p>\
+      <span class="codKdo">avec le code <span>B1WB</span></span>\
+      <a href="/versKdo">J\'utilise ce code</a>\
   ';
   // best solution to inject HTML by JS script (after dom ready)
   // fct to create modules
@@ -31,6 +38,9 @@ var modGaranti_  = true;
   }
   if (modGaranti_) {
     appendHTML(modGaranti, target, 'modGaranti');
+  }
+  if (modKdo_) {
+    appendHTML(modKdo, target, 'modKdo');
   }
 
 });

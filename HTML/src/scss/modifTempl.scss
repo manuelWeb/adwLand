@@ -14,25 +14,42 @@
 }
 .avoidIdBo, .colRight {
   float: right;
-  width: 260px;
+  width: 270px;
   min-height: 100px;
-  padding-left: 10px;
   padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
   border-left: 1px solid #AF007D;
-  background-color: #eee;
+  // background-color: #eee;
 }
-
+.avoidIdBo, .colRight p{
+  font-size: 12px;
+}
+// supp border on last-child
+.avoidIdBo, .colRight div:last-child{
+  border: none;
+}
 // module conseillère
 .avoidIdBo, .modConseill {
-  border: solid 2px pink; margin-bottom: 10px;
-  // zl_conseilliere.jpg
+  // border: solid 2px pink;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #B70D7F;
   // background: url(../images/imgZL/zl_conseilliere.jpg) 0 0 no-repeat;
 }
+// .avoidIdBo, .modConseill:after {
+//   // content: '';
+//   // border: 1px solid #B70D7F;
+//   content: '____________________________________';
+//   display: block;
+//   text-align: center;
+//   color: #B70D7F;
+// }
 .avoidIdBo, .tilCons {
   display: block;
-  font: italic 16px "Times New Roman", Times, serif;
+  font: italic 18px/18px "Times New Roman", Times, serif;
   color: #6B4795;
-  text-indent: 22px;
+  padding-left: 22px;
   background: url(../images/imgZL/bg_puce-garantie.png) 0 50% no-repeat;
 }
 .avoidIdBo, .zl_numSva {
@@ -73,5 +90,49 @@
   background-color: #6B4795;
   color: #fff; text-align: center;
   font: 14px/20px theonlyexceptionregular;
-  // outline: 1px solid blue;
+}
+// Module Kdo
+.avoidIdBo, .modKdo {
+  @extend .modConseill;
+  text-align: center;
+}
+.avoidIdBo, .tilKdo {
+  @extend .tilCons;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.avoidIdBo, .tilKdo + img {
+  margin: 10px 0;
+  border: 8px solid #fff;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.35);
+}
+.avoidIdBo, .libKdo {}
+.avoidIdBo, .codKdo {
+  display: block;
+  margin: 20px 0;
+  color: #6B4795;
+  font: bold 14px Arial, Helvetica, sans-serif;
+}
+.avoidIdBo, .codKdo > span {
+  padding: 3px 10px;
+  color: #111;
+  border: 2px solid #6B4795;
+  border-radius: 2px;
+}
+.avoidIdBo, .codKdo + a:before {
+  // cantrage vertical
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.avoidIdBo, .codKdo + a {
+  display: inline-block;
+  height: 32px; padding: 0 20px;
+  vertical-align: middle;
+  border: none;
+  font: bold 14px arial; color: #fff; text-align: center;
+  background-color: #B70D7F;
+  border-radius: 15px;
 }

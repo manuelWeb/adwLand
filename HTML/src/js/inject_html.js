@@ -1,7 +1,8 @@
 $(document).ready(function (argument) {
-var modConseill_ = true;
-var modGaranti_  = true;
-var modKdo_  = true;
+	// booleen affichage modules
+	var modConseill_ = true,
+			modGaranti_  = true,
+			modKdo_      = true;
   // creation marquage HTML et texte
   var modConseill = '\
       <span class="tilCons">Une conseillère à votre écoute</span>\
@@ -10,13 +11,15 @@ var modKdo_  = true;
         <span class="zl_numSva">0 892 780 790 <span>Service 0.45€ / min<br /> + prix appel</span> </span>\
         <p>du lundi au vendredi de 7h à 20h<br />et le samedi de 9h à 19h</p>\
       </div>\
-  ',  modGaranti = '\
+  ';
+	var modGaranti = '\
       <span class="tilGarant">Nos garanties</span>\
       <span class="eltRassur">Satisfait ou<br />remboursé</span>\
       <span class="eltRassur">Livraison<br />à la carte</span>\
       <span class="eltRassur">Paiement<br />sécurisé</span>\
       <span class="eltRassur">Garantie<br />un an</span>\
-  ',  modKdo = '\
+  ';
+	var modKdo = '\
       <span class="tilKdo">Votre cadeau gratuit</span>\
       <img src="./images/imgZL/kdo_2372993_WEB1.jpg" alt="" />\
       <p class="libKdo"><b>La montre Geneva®* Noire ou Blanche</b> GRATUITE et sans obligation d\'achat.</p>\
@@ -38,9 +41,11 @@ var modKdo_  = true;
   if (modConseill_) {
     appendHTML(modConseill, target, 'modConseill');
   }
+  // creation module Nos garnaties >
   if (modGaranti_) {
     appendHTML(modGaranti, target, 'modGaranti');
   }
+  // creation module Votre cadeau gratuit >
   if (modKdo_) {
     appendHTML(modKdo, target, 'modKdo');
   }

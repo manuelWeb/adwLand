@@ -1,8 +1,3 @@
-/*==================================================
-=            npm install gulp --sav-dev            =
-==================================================*/
-// to disable>dest path replace fs
-/*----------  dependance  > package.json > node_modules  ----------*/
 var gulp         = require('gulp'),
     browserSync  = require('browser-sync'),
     slim         = require("gulp-slim"),
@@ -58,7 +53,7 @@ gulp.task('fonts', function() {
 });
 // script-cp task
 gulp.task('script', function() {
-  'use strict';
+  // 'use strict';
   return gulp.src([src+'js/*.js'])
   // .pipe(npm()) // js traitement
   .pipe(gulp.dest(script))
@@ -85,35 +80,25 @@ gulp.task('sass', function() {
 
 // slim task
 gulp.task('slim', function () {
-  var slimEnd = false;
   return gulp.src([src+'slim/*.slim']) // src+'*.slim', // pas de fichier sur :root
   .pipe(plumber())
   .pipe(slim( {pretty: true, indent: '2' })) // {read:false},
-  // .pipe(changed('HTML/dest/'))
   .pipe(using())
   .pipe(gulp.dest('dest/')) // slim folder
-  // .on('end', browserSync.reload)
-  .on('end',function () {
-    slimEnd = true;
-    premailergo(slimEnd);
-  })
-  .pipe(browserSync.reload({
-    stream: true
-  }))
+  .on('end', browserSync.reload)
+  // .pipe(browserSync.reload({
+  //   stream: true
+  // }))
 });
-
-function premailergo (slimEnd) {
-  console.log('slimeEnd: '+slimEnd);
-};
 
 gulp.task('dev',['browserSync','visuels','images','script','fonts','slim','sass'], function() {
   gulp.watch([src+'images/**/*.{png,jpg,gif,svg}'],['images'])
   gulp.watch([src+'Visuels/**/**/*.{png,jpg,gif,svg}'],['visuels'])
   gulp.watch([src+'js/*.js'],['script'])
   gulp.watch(src+'scss/*.scss',['slim','sass','images','script']);
-  gulp.watch(src+'slim/*.slim',['slim','images','script']);
-  gulp.watch(src+'**/*.slim',['slim','images','script']);
-  gulp.watch(src+'**/**/*.slim',['slim','images','script']);
+  gulp.watch([src+'slim/*.slim',src+'**/*.slim'],['slim','images','script']);
+  // gulp.watch(src+'**/*.slim',['slim','images','script']);
+  // gulp.watch(src+'**/**/*.slim',['slim','images','script']);
   // gulp.start('build');
 });
 

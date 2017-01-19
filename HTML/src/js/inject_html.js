@@ -1,9 +1,15 @@
 $(document).ready(function (argument) {
-	// booleen affichage modules
-	var modConseill_ = true,
-			modGaranti_  = true,
-			modKdo_      = true;
-  // creation marquage HTML et texte
+  // NE PAS UTILISER DE " sans echappement: \"
+  var codekdo  = "1234",
+      txtkdo_b = "La montre Geneva®* Noire ou Blanche",
+      txtkdo   = "GRATUITE et sans obligation d'achat.",
+      imgkdo   = "kdo_2372993_WEB1.jpg";
+  // booleen affichage modules
+  var modConseill_ = true,
+      modGaranti_  = true,
+      modKdo_      = true,
+      modInsNews_  = true;
+  // DO-NOT-TOUCH creation marquage HTML et texte
   var modConseill = '\
       <span class="tilCons">Une conseillère à votre écoute</span>\
       <p> > Vous pouvez nous contacter<br>par téléphone</p>\
@@ -12,19 +18,25 @@ $(document).ready(function (argument) {
         <p>du lundi au vendredi de 7h à 20h<br />et le samedi de 9h à 19h</p>\
       </div>\
   ';
-	var modGaranti = '\
+  var modGaranti = '\
       <span class="tilGarant">Nos garanties</span>\
       <span class="eltRassur">Satisfait ou<br />remboursé</span>\
       <span class="eltRassur">Livraison<br />à la carte</span>\
       <span class="eltRassur">Paiement<br />sécurisé</span>\
       <span class="eltRassur">Garantie<br />un an</span>\
   ';
-	var modKdo = '\
+  var modKdo = '\
       <span class="tilKdo">Votre cadeau gratuit</span>\
-      <img src="./images/imgZL/kdo_2372993_WEB1.jpg" alt="" />\
-      <p class="libKdo"><b>La montre Geneva®* Noire ou Blanche</b> GRATUITE et sans obligation d\'achat.</p>\
-      <span class="codKdo">avec le code <span>B1WB</span></span>\
+      <img src="./images/imgZL/'+imgkdo+'" alt="" />\
+      <p class="libKdo"><b>'+txtkdo_b+'</b><br />'+txtkdo+'</p>\
+      <span class="codKdo">avec le code <span>'+codekdo+'</span></span>\
       <a href="/versKdo">J\'utilise ce code</a>\
+  ';
+  var modInsNews = '\
+      <span class="tilKdo">La newsletter</span>\
+      <p> > Recevez nos nouveautés<br />et avantages exclusifs par email</p>\
+      <br />\
+      <a href="http://www.latelierdelucie.fr/fr/animation/newsletter.aspx"><img src="./images/imgZL/zl_imgForm.png" alt="" /></a>\
   ';
   // best solution to inject HTML by JS script (after dom ready)
   // fct to create modules
@@ -48,6 +60,10 @@ $(document).ready(function (argument) {
   // creation module Votre cadeau gratuit >
   if (modKdo_) {
     appendHTML(modKdo, target, 'modKdo');
+  }
+  // creation module La newsletter >
+  if (modInsNews_) {
+    appendHTML(modInsNews, target, 'modInsNews');
   }
 
 });

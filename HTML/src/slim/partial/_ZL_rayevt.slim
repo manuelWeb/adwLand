@@ -6,14 +6,24 @@
 .partZlRayonEvent
   #ctl00_ContentPlaceHolder1_shpEncartRayonEvent
     script src="./js/injectHtml.js" type="text/javascript"
+    / script src="src/js/injectHtml.js" type="text/javascript"
     script src="./js/inject_Html.js" type="text/javascript"
-    == $zl_title
+    / script src="src/js/inject_Html.js" type="text/javascript"
+    span.zl_legend
+      == $zl_legend
     ol
       li
-        | Libellé pdt XX,xx€
+        a href==$linkTop[:one]
+          | Libellé pdt un XX,xx€
       li
-        | ligne deux...
+        a href==$linkTop[:two]
+          | Libellé pdt deux...
       li
-        | ligne trois...
-    / script src="src/js/injectHtml.js" type="text/javascript"
-    / script src="src/js/inject_Html.js" type="text/javascript"
+        a href==$linkTop[:three]
+          | Libellé pdt trois...
+      li
+        a href==$linkTop[:four]
+          | Libellé pdt quatre...
+      li
+        a href==$linkTop[:five]
+          | Libellé pdt cinq...

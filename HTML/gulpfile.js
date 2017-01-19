@@ -61,7 +61,7 @@ gulp.task('script', function() {
 });
 
 // sass task
-gulp.task('sass', function() {
+gulp.task('sass', ['slim'], function() {
   return gulp.src(src+'scss/*.scss')
   .pipe(plumber())
   .pipe(sourcemaps.init())
@@ -71,7 +71,7 @@ gulp.task('sass', function() {
       outputStyle: 'compact'
     }))
   .pipe(autoprefixer(['last 2 version', '> 1%', 'ie >= 8']))
-  .pipe(changed(css))
+  // .pipe(changed(css))
   .pipe(sourcemaps.write('.maps'))
   .pipe(gulp.dest('dest/css/'))
   .pipe(using())
@@ -85,10 +85,10 @@ gulp.task('slim', function () {
   .pipe(slim( {pretty: true, indent: '2' })) // {read:false},
   .pipe(using())
   .pipe(gulp.dest('dest/')) // slim folder
-  .on('end', browserSync.reload)
-  // .pipe(browserSync.reload({
-  //   stream: true
-  // }))
+  // .on('end', browserSync.reload)
+  .pipe(browserSync.reload({
+    stream: true
+  }))
 });
 
 gulp.task('dev',['browserSync','visuels','images','script','fonts','slim','sass'], function() {
@@ -97,9 +97,6 @@ gulp.task('dev',['browserSync','visuels','images','script','fonts','slim','sass'
   gulp.watch([src+'js/*.js'],['script'])
   gulp.watch(src+'scss/*.scss',['slim','sass','images','script']);
   gulp.watch([src+'slim/*.slim',src+'**/*.slim'],['slim','images','script']);
-  // gulp.watch(src+'**/*.slim',['slim','images','script']);
-  // gulp.watch(src+'**/**/*.slim',['slim','images','script']);
-  // gulp.start('build');
 });
 
 // prod

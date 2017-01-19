@@ -1,4 +1,5 @@
 == Slim::Template.new('src/slim/var/var_txt.slim').render
+- counter   = ["one","two","three","four","five"]
 | #{"\n"}
 /! ####################################### zone libre #######################################
 / link href="src/scss/modifTempl.scss"
@@ -9,21 +10,51 @@
     / script src="src/js/injectHtml.js" type="text/javascript"
     script src="./js/inject_Html.js" type="text/javascript"
     / script src="src/js/inject_Html.js" type="text/javascript"
-    span.zl_legend
-      == $zl_legend
-    ol
-      li
-        a href==$linkTop[:one]
-          | Libellé pdt un XX,xx€
-      li
-        a href==$linkTop[:two]
-          | Libellé pdt deux...
-      li
-        a href==$linkTop[:three]
-          | Libellé pdt trois...
-      li
-        a href==$linkTop[:four]
-          | Libellé pdt quatre...
-      li
-        a href==$linkTop[:five]
-          | Libellé pdt cinq...
+    div.zl_chapeau
+      span.zl_legend
+        == $zl_legend
+      br.clear
+      ol
+        - counter.each {|i|
+        -n = "#{counter.index(i)}"
+        -r = "#{n}".to_i
+        -r += 1
+        -puts n.instance_of?(Fixnum)
+        -puts r
+        li
+          a href==$linkTop[:"#{i}"] onclick="ga('local.send', 'event', 'Adwords', 'BlockTop1', document.location.pathname);"
+            == "#{$textTop[:"#{i}"]} : #{r}" + n
+        - }
+      / ol
+      /   li
+      /     a href==$linkTop[:one] onclick="ga('local.send', 'event', 'Adwords', 'BlockTop1', document.location.pathname);"
+      /       == "#{$textTop[:one]}"
+      /   li
+      /     a href==$linkTop[:two] onclick="ga('local.send', 'event', 'Adwords', 'BlockTop2', document.location.pathname);"
+      /       == "#{$textTop[:two]}"
+      /   li
+      /     a href==$linkTop[:three] onclick="ga('local.send', 'event', 'Adwords', 'BlockTop3', document.location.pathname);"
+      /       == "#{$textTop[:three]}"
+      /   li
+      /     a href==$linkTop[:four] onclick="ga('local.send', 'event', 'Adwords', 'BlockTop4', document.location.pathname);"
+      /       == "#{$textTop[:four]}"
+      /   li
+      /     a href==$linkTop[:five] onclick="ga('local.send', 'event', 'Adwords', 'BlockTop5', document.location.pathname);"
+      /       == "#{$textTop[:five]}"
+      ul
+        li
+          == $textTop[:one_price]
+        li
+          == $textTop[:two_price]
+        li
+          == $textTop[:three_price]
+        li
+          == $textTop[:four_price]
+        li
+          == $textTop[:five_price]
+
+      p.zl_select
+        | Notre selection 
+        br
+        span
+          | CANEVAS

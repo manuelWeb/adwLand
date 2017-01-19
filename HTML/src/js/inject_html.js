@@ -1,6 +1,7 @@
 $(document).ready(function (argument) {
+			// test comment
   // NE PAS UTILISER DE " sans echappement: \"
-  var codekdo  = "1234",
+  var codekdo  = "XXXX",
       txtkdo_b = "La montre Geneva®* Noire ou Blanche",
       txtkdo   = "GRATUITE et sans obligation d'achat.",
       imgkdo   = "kdo_2372993_WEB1.jpg";

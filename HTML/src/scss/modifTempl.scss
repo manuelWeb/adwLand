@@ -1,3 +1,53 @@
+.avoidIdBo, .zl_chapeau {
+  position: relative;
+  margin: 10px 22px 0 20px;
+  padding: 10px;
+	border: 1px solid #B70D7F;
+  background: url(../images/imgZL/bg_zl_chapeau.jpg) 0 0 no-repeat;
+  overflow: hidden;
+}
+.avoidIdBo, .zl_legend {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 4px 10px;
+  background-color: #FFFF00;
+}
+.avoidIdBo, .zl_chapeau ul {
+  margin-left: 10px;
+  list-style: none;
+  text-align: right;
+}
+.avoidIdBo, .zl_chapeau ol, .zl_chapeau ul {
+  float: left;
+  // outline: 1px solid deeppink;
+}
+.avoidIdBo, .zl_chapeau ol {
+  list-style-position: inside;
+}
+.avoidIdBo, .zl_chapeau ol a:hover {
+  text-decoration: underline;
+}
+.avoidIdBo, .zl_select {
+  position: absolute; top: 10px; left: 250px;
+  font: bold 16px Arial, Helvetica, sans-serif;
+  color: #B70D7F;
+}
+.avoidIdBo, .zl_select span{
+  position: relative; left: 44px;
+  font-size: 21px;
+}
+// repaint listingProduct
+.avoidIdBo, #tetiere {
+  display: none;
+}
+.avoidIdBo, #paginationHaut {
+  // display: none;
+}
+.avoidIdBo, #container.resultRecher {
+  clear: left;
+  margin-top: 0;
+  padding-top: 0;
+}
 .avoidIdBo, .zone1 {
   clear: left;
 }

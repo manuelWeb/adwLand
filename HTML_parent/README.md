@@ -12,3 +12,9 @@
 #### Questions
 - Le code da5e4f51-dda0-421b-84a2-951865963d7a est il le même pour tous les pages :
 - www.choixboutique.fr/fr/boutique/rayon_evenement.aspx?evenement_id=num-num-num
+- R: ce code change aléatoirement à chaque maj du site et est propre à l'enseigne.
+
+#### Résolution
+- Changer ce code à chaque bascule avant de travailler sur les différentes zones libre.
+- Ce code doit être accessible à un niveau supérieur à toutes les fichiers des différentes zones libres.
+- Le fichier contenant ce code sera sous forme config.json

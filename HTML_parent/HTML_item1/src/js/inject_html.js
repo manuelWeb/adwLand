@@ -1,10 +1,12 @@
 $(document).ready(function (argument) {
 			// test comment
   // NE PAS UTILISER DE " sans echappement: \"
-  var codekdo  = "XXXX",
+  var codekdo  = "RGBA",
       txtkdo_b = "La montre Geneva®* Noire ou Blanche",
       txtkdo   = "GRATUITE et sans obligation d'achat.",
-      imgkdo   = "kdo_2372993_WEB1.jpg";
+      imgkdo   = "kdo_2372993_WEB1.jpg",
+      gTrack_k = "ga('local.send', 'event', 'Adwords', 'BlockKDO', document.location.pathname);",
+      gTrack_n = "ga('local.send', 'event', 'Adwords', 'BlockNews', document.location.pathname);";
   // booleen affichage modules
   var modConseill_ = true,
       modGaranti_  = true,
@@ -31,13 +33,15 @@ $(document).ready(function (argument) {
       <img src="./images/imgZL/'+imgkdo+'" alt="" />\
       <p class="libKdo"><b>'+txtkdo_b+'</b><br />'+txtkdo+'</p>\
       <span class="codKdo">avec le code <span>'+codekdo+'</span></span>\
-      <a href="/versKdo">J\'utilise ce code</a>\
+      <a href="/versKdo" onclick="'+gTrack_k+'">J\'utilise ce code</a>\
   ';
   var modInsNews = '\
       <span class="tilKdo">La newsletter</span>\
       <p> > Recevez nos nouveautés<br />et avantages exclusifs par email</p>\
       <br />\
-      <a href="http://www.latelierdelucie.fr/fr/animation/newsletter.aspx"><img src="./images/imgZL/zl_imgForm.png" alt="" /></a>\
+      <a href="http://www.latelierdelucie.fr/fr/animation/newsletter.aspx" onclick="'+gTrack_n+'">\
+      <img src="./images/imgZL/zl_imgForm.png" alt="" />\
+      </a>\
   ';
   // best solution to inject HTML by JS script (after dom ready)
   // fct to create modules

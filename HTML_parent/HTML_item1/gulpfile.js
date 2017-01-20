@@ -19,7 +19,8 @@ var gulp         = require('gulp'),
     cheerio      = require('cheerio');
 
 // src & output
-var src = 'src/',
+var imgUrlCode = '4a52be27-f905-4d2d-8098-d1912b1bfbcd',
+    src = 'src/',
     img = 'dest/images/',
     script = 'dest/js/',
     css = 'dest/css/';
@@ -118,7 +119,7 @@ gulp.task('replaceSrc', function(){
 
   // cp inject_html replcae img src by BO path
   gulp.src(['dest/js/inject_Html.js'])
-    .pipe(replace('./images/imgZL/', 'http://www.latelierdelucie.fr/Upload/ZonesLibres/da5e4f51-dda0-421b-84a2-951865963d7a/FR/'))
+    .pipe(replace('./images/imgZL/', 'http://www.latelierdelucie.fr/Upload/ZonesLibres/'+imgUrlCode+'/FR/'))
     .pipe(gulp.dest('build/'))
     .pipe(using());
   // cp dest/index.html in build/ + regex to replace src path

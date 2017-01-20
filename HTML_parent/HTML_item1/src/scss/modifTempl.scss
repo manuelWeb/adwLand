@@ -19,6 +19,7 @@
 }
 .avoidIdBo, .zl_chapeau ol, .zl_chapeau ul {
   float: left;
+  background-color: rgba(255,255,255,0.6);
   // outline: 1px solid deeppink;
 }
 .avoidIdBo, .zl_chapeau ol {
@@ -28,7 +29,7 @@
   text-decoration: underline;
 }
 .avoidIdBo, .zl_select {
-  position: absolute; top: 10px; left: 250px;
+  position: absolute; top: 10px; left: 270px;
   font: bold 16px Arial, Helvetica, sans-serif;
   color: #B70D7F;
 }

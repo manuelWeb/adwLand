@@ -1,6 +1,6 @@
 $(document).ready(function (argument) {
   // NE PAS UTILISER DE " sans echappement: \"
-  var codekdo  = "XXXX",
+  var codekdo  = "Hello:)",
       txtkdo_b = "La montre Geneva®* Noire ou Blanche",
       txtkdo   = "GRATUITE et sans obligation d'achat.",
       imgkdo   = "kdo_2372993_WEB1.jpg",
@@ -12,7 +12,7 @@ $(document).ready(function (argument) {
       modKdo_      = true,
       modInsNews_  = true;
 
-  // DO-NOT-TOUCH creation marquage HTML et texte
+  // ###### DO-NOT-TOUCH creation marquage HTML et texte ##########
   var modConseill = '\
       <span class="tilCons">Une conseillère à votre écoute</span>\
       <p> > Vous pouvez nous contacter<br>par téléphone</p>\
@@ -28,14 +28,12 @@ $(document).ready(function (argument) {
       <span class="eltRassur">Paiement<br />sécurisé</span>\
       <span class="eltRassur">Garantie<br />un an</span>\
   ';
-  // createCookie('codeKdoAdw', '$(\".codKdo span\").text()', 7)
-  // createCookie(\'codeKdoAdw\', '$(\".codKdo span\").text()', 7)
   var modKdo = '\
       <span class="tilKdo">Votre cadeau gratuit</span>\
       <img src="./images/imgZL/'+imgkdo+'" alt="" />\
       <p class="libKdo"><b>'+txtkdo_b+'</b><br />'+txtkdo+'</p>\
       <span class="codKdo">avec le code <span>'+codekdo+'</span></span>\
-      <a href="" onclick="createCookie(\'codeKdoAdw\', $(\'.codKdo span\').text(), 7);'+gTrack_k+'">J\'utilise ce code</a>\
+      <a href="javascript:void(0)" onclick="createCookie(\'codeKdoAdw\', $(\'.codKdo span\').text(), 7, cb($(\'.codKdo span\').text()));'+gTrack_k+'">J\'utilise ce code</a>\
   ';
   var modInsNews = '\
       <span class="tilKdo">La newsletter</span>\

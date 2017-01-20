@@ -123,6 +123,12 @@ gulp.task('replaceSrc', function(){
     .pipe(replace('./images/imgZL/', 'http://www.latelierdelucie.fr/Upload/ZonesLibres/'+iUC+'/FR/'))
     .pipe(gulp.dest('build/'))
     .pipe(using());
+
+  // cp setCookie_adw.js
+  gulp.src(['dest/js/setCookie_adw.js'])
+    .pipe(gulp.dest('build/'))
+    .pipe(using());
+
   // cp dest/index.html in build/ + regex to replace src path
   gulp.src(['dest/index.html'])
     .pipe(replace('images/imgZL/', ''))

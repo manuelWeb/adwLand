@@ -171,6 +171,7 @@ gulp.task('html', function() {
     zoneL = zoneL.html()
     .replace('./js/injectHtml.js', 'injectHtml.js')
     .replace('./js/inject_Html.js', 'inject_Html.js')
+    .replace('./js/setCookie_adw.js', 'setCookie_adw.js')
     .replace(/(<img("[^"]*"|[^\/">])*)>/g, "$1 />")
     .replace(/(<br[^\/])/, "<br />")
     .replace(/<br>/g, "<br />")

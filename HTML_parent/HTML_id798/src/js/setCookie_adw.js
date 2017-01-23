@@ -1,4 +1,5 @@
 // name of cookie, value of, days before he died
+// $(document).ready(function (argument) {});
 function createCookie(name,value,days) {
   if (days) {
     var date = new Date();
